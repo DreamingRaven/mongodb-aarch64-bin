@@ -16,12 +16,13 @@ source=(
     "https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/${basever}/multiverse/binary-arm64/mongodb-org-shell_${pkgver}_arm64.deb"
     "https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/${basever}/multiverse/binary-arm64/mongodb-org-server_${pkgver}_arm64.deb"
     "https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/${basever}/multiverse/binary-arm64/mongodb-org-mongos_${pkgver}_arm64.deb"
-    "mongodb.service"
-    "mongodb.conf"
-    "mongodb.sysusers"
-    "mongodb.tmpfiles"
-    "LICENSE")
-sha256sums=("SKIP")
+    # "mongodb.service"
+    # "mongodb.conf"
+    # "mongodb.sysusers"
+    # "mongodb.tmpfiles"
+    # "LICENSE"
+    )
+sha256sums=("SKIP" "SKIP" "SKIP")
 
 backup=("etc/mongodb.conf")
 
@@ -43,9 +44,9 @@ package() {
   mkdir -p "$pkgdir/usr/share/man"
   cp -r "$srcdir/output/usr/bin" "$pkgdir/usr/"
   cp -r "$srcdir/output/usr/share/man/man1" "$pkgdir/usr/share/man/"
-  install -Dm644 "$srcdir/mongodb.conf" "$pkgdir/etc/mongodb.conf"
-  install -Dm644 "$srcdir/mongodb.service" "$pkgdir/usr/lib/systemd/system/mongodb.service"
-  install -Dm644 "$srcdir/mongodb.sysusers" "$pkgdir/usr/lib/sysusers.d/mongodb.conf"
-  install -Dm644 "$srcdir/mongodb.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/mongodb.conf"
-  install -Dm644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  # install -Dm644 "$srcdir/mongodb.conf" "$pkgdir/etc/mongodb.conf"
+  # install -Dm644 "$srcdir/mongodb.service" "$pkgdir/usr/lib/systemd/system/mongodb.service"
+  # install -Dm644 "$srcdir/mongodb.sysusers" "$pkgdir/usr/lib/sysusers.d/mongodb.conf"
+  # install -Dm644 "$srcdir/mongodb.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/mongodb.conf"
+  # install -Dm644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
