@@ -45,6 +45,11 @@ package() {
   mkdir -p "$pkgdir/usr/share/man"
   cp -r "$srcdir/output/usr/bin" "$pkgdir/usr/"
   cp -r "$srcdir/output/usr/share/man/man1" "$pkgdir/usr/share/man/"
+
+  # make compatible
+  # ln -sf /usr/lib/libcurl-compat.so.4.5.0 /usr/lib/libcurl.so.5
+
+
   # install -Dm644 "$srcdir/mongodb.conf" "$pkgdir/etc/mongodb.conf"
   # install -Dm644 "$srcdir/mongodb.service" "$pkgdir/usr/lib/systemd/system/mongodb.service"
   # install -Dm644 "$srcdir/mongodb.sysusers" "$pkgdir/usr/lib/sysusers.d/mongodb.conf"
