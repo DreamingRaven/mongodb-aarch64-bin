@@ -6,8 +6,8 @@ basever="4.0"
 pkgver="${basever}.9"
 pkgrel="1"
 pkgdesc="A high-performance, open source, schema-free document-oriented database"
-arch=("aarch64")
-depends('libcurl-compat')
+arch=("aarch64" "armv7h")
+depends=('libcurl-compat')
 url="https://www.mongodb.com/"
 license=("SSPLv1")
 provides=("mongodb=$pkgver")
